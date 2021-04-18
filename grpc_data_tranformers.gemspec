@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'grpc_data_tranformers'
-  s.version     = '0.0.0'
+  s.version     = '0.0.1'
   s.date        = '2020-08-22'
   s.summary     = "Ruby Grpc data tranformers"
   s.description = "A simple gem to convert from Grpc object to Hash and vice versa"

@@ -20,11 +20,13 @@ eg.
         message ProductRequest {
           uint64 id = 2;
           string name = 3;
+          repeated string categories = 4;
        }
 
       message ProductResp {
           uint64 id = 2;
           string name = 3;
+          repeated string categories = 4;
        }
 
       service Product {
@@ -39,7 +41,8 @@ eg.
         Google::Protobuf::DescriptorPool.generated_pool.build do
            add_message "cpqgrpc.product.v1.ProductRequest" do
              optional :id, :uint64, 2
-             repeated :name, :string, 3
+             optional :name, :string, 3
+             repeated :categories, :string, 4
            end
         end
 
@@ -55,7 +58,7 @@ eg.
 # Above are the sample generated protos
 1. To convert hash { id: 1, name: 'Macbook' } to Grpc object Cpqgrpc::Product::V1::ProductRequest use below
 
-   GrpcDataTransformers.hash_to_grpc_object( { id: 1, name: 'Macbook' })
+   GrpcDataTransformers.hash_to_grpc_object( { id: 1, name: 'Macbook', categories: ['hardware', 'laptop'] })
 
 
 
